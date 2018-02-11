@@ -10,6 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+/**
+ * 登录url
+ */
+Route::get('/login','LoginController@login');
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,6 +23,8 @@ Route::get('/', function () {
 Route::get('foo', function () {
         return 'Welcome Laravel ';
     });
+
+
 Route::group(["prefix"=>"student"],function(){
     /**
      *
@@ -32,11 +39,9 @@ Route::group(["prefix"=>"student"],function(){
 
 Route::group(["prefix"=>"user"],function(){
     /**
-     *  测试数据库操作
+     *  测试数据库操作 DB 直接执行 sql 语句
      */
     Route::get('show','UserController@show');
-
-
     /*
      * 命名路由
      */
@@ -46,6 +51,14 @@ Route::group(["prefix"=>"user"],function(){
         $url = route('profile', ['id' => $id]);
         return $url;
     })->name('profile');
+
+    /**
+     * 测试数据库操作功能(增，删 ，改 ，查)
+     */
+    Route::get('/select','UserController@select');
+    Route::get('/insert','UserController@insert');
+    Route::get('/update','UserController@update');
+    Route::get('/del','UserController@del');
 
 });
 
