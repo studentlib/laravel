@@ -8,11 +8,7 @@ use DB;
 
 class UserController extends Controller
 {
-<<<<<<< HEAD
     //laravel 高级查询方法学习 ： http://blog.csdn.net/fationyyk/article/details/50884244
-=======
-    
->>>>>>> 5fb10aaf223e53b20ee5b6870c0e5383494ac03f
     public function __construct(){
 
         
@@ -29,11 +25,7 @@ class UserController extends Controller
         //同first 效果差不多  ，value只取出值
         //$user=UserModel::where("uid","2")->value('name');
         //查询 需要的字段
-<<<<<<< HEAD
         $user=UserModel::where("userid","1")->select("userid","username","roleid")->get()->toArray();
-=======
-        $user=UserModel::where("uid","1")->select("uid","name","age")->get()->toArray();
->>>>>>> 5fb10aaf223e53b20ee5b6870c0e5383494ac03f
 
         dd($user);
     }
@@ -59,21 +51,11 @@ class UserController extends Controller
 
         //
         $arr=[
-<<<<<<< HEAD
             ["username"=>"laohuang","roleid"=>"1","password"=>"lll","realname"=>"老黄"],
         ];
         $status=UserModel::insert($arr);
 
         dd($status);
-=======
-            ["name"=>"楼下小红","age"=>"23","uid"=>"11000011","roleid"=>"2"],
-            ["name"=>"楼下小黄","age"=>"24","uid"=>"11000012","roleid"=>"2"],
-            ["name"=>"楼下小绿","age"=>"25","uid"=>"11000013","roleid"=>"2"]
-        ];
-        UserModel::insert($arr);
-
-        dd($user->id);
->>>>>>> 5fb10aaf223e53b20ee5b6870c0e5383494ac03f
     }
 
     public function update(){

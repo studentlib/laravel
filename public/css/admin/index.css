@@ -84,7 +84,7 @@ ul, ol, li {
 body {
     font-size: 13px;
     /*font-family: 微软雅黑;*/
-    overflow: hidden;
+    overflow: auto;
 }
 
 a {
@@ -99,7 +99,7 @@ ul, menu, dir {
     -webkit-margin-after: 1em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
-    -webkit-padding-start: 40px;
+    -webkit-padding-start: 2px;
 }
 
 .backstage_top {
@@ -122,9 +122,12 @@ ul, menu, dir {
     width: 800px;
     height: 23px;
     font-size: 15px;
+    color: white;
     margin: 16px 0 0 16px;
 }
-
+.top_narration a{
+    color: antiquewhite;
+}
 .top_menu {
     float: left;
     width: 80%;
@@ -164,26 +167,41 @@ ul, menu, dir {
     max-height: 568px;
     min-height: 868px;
     background-color: #F6FAFB;
-    overflow: hidden;
+    overflow: auto;
 }
 .left_main{
+    width: 132px;
     float: left;
     margin-left: 2px;
     border: 1px solid red;
-    width: 90%;
-
+    text-align: center;
+    font-size: 15px;
+    overflow-x: hidden;
+}
+.left_main ul{
+    margin: auto;
+    text-align-all: center;
+}
+.left_main ul li{
+    width: 125px;
+    height: 35px;
+    text-align: center;
+}
+.left_main ul li b a{
+    font-size: 15px;
 }
 .left_botton{
     float: right;
     background-color: #D5E0E3;
     width: 8px;
-    height: 100%;
+    max-height: 568px;
+    min-height: 868px;
     outline-style: none;
     outline-width: medium;
-    background: -webkit-linear-gradient(left, #106491 ,#29c5ff); /* Safari 5.1 - 6.0 */
-    background: -o-linear-gradient(right, #106491, #29c5ff); /* Opera 11.1 - 12.0 */
-    background: -moz-linear-gradient(right, #106491, #29c5ff); /* Firefox 3.6 - 15 */
-    background: linear-gradient(to right, #106491, #29c5ff); /* 标准的语法（必须放在最后） */
+    background: -webkit-linear-gradient(left ,#29c5ff, #106491); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #29c5ff, #106491); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #29c5ff, #106491); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #29c5ff, #106491); /* 标准的语法（必须放在最后） */
 }
 .backstage_content {
     position: absolute;
@@ -195,5 +213,7 @@ ul, menu, dir {
     max-height: 568px;
     min-height: 868px;
     background-color: antiquewhite;
-    overflow: hidden;
+    overflow-x: hidden;
 }
+
+

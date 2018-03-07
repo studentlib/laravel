@@ -19,8 +19,9 @@ class IndexController extends Controller{
             ->select("menu_li", "redirect_url", "menu_name")
             ->orderBy("id", "ASC")
             ->get()->toArray();
+        Session::put("left_menu",$left_menu);
+//        dd(Session::get("left_menu"));
         return view("setup.index");
-//        dd($left_menu);
     }
 
     /*

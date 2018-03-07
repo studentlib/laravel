@@ -49,7 +49,6 @@ return [
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
-<<<<<<< HEAD
             'prefix' => 'gm_',
             'strict' => true,
             'engine' => null,
@@ -66,9 +65,6 @@ return [
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => 'gm',
-=======
-            'prefix' => '',
->>>>>>> 5fb10aaf223e53b20ee5b6870c0e5383494ac03f
             'strict' => true,
             'engine' => null,
         ],

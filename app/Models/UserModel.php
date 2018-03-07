@@ -1,14 +1,10 @@
 <?php
 
 namespace App\Models;
-<<<<<<< HEAD
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 
-=======
-use Illuminate\Database\Eloquent\Model;
->>>>>>> 5fb10aaf223e53b20ee5b6870c0e5383494ac03f
 
 /**
  * 1. 命名空间一定与文件目录对应，每个文件的首字母一定大写
@@ -17,7 +13,6 @@ use Illuminate\Database\Eloquent\Model;
  * 4. 如果该表主键非id，需要$primaryKey指定该表的主键（如果不指定主键 ，laravel 默认id 作为主键）
  * 5. $timestamps (默认 true) ，自动插入创建时间（created_at）和修改时间（updated_at）  设置false 关闭自动填充功能
  */
-<<<<<<< HEAD
 class UserModel extends Model
 {
     //指定表名
@@ -85,14 +80,4 @@ class UserModel extends Model
         }
     }
 
-=======
-
-class UserModel extends Model{
-
-    protected $table='users';
-
-    //public $timestamps=false;
-
-    protected $fillable=["uid","roleid","name","age"];
->>>>>>> 5fb10aaf223e53b20ee5b6870c0e5383494ac03f
 }

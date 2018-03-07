@@ -8,7 +8,6 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use App\Models\TopmenuModel;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
@@ -18,8 +17,6 @@ use Illuminate\Support\Facades\Session;
 /**
  * 注意一定加载 use Illuminate\Http\Request
  */
-=======
->>>>>>> 5fb10aaf223e53b20ee5b6870c0e5383494ac03f
 class LoginController extends Controller
 {
     public function __construct()
@@ -29,7 +26,6 @@ class LoginController extends Controller
 
     public function login()
     {
-<<<<<<< HEAD
         if(Session::get("isLogin")){
             return redirect("/login/first");
         }else{
@@ -77,10 +73,6 @@ class LoginController extends Controller
         //Session::forget("isLogin");
         Session::flush();
         return redirect("/login");
-=======
-
-        return view("login.signin");
->>>>>>> 5fb10aaf223e53b20ee5b6870c0e5383494ac03f
     }
 
 }

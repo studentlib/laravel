@@ -8,6 +8,9 @@
 <title>gm首页</title>
 <link href="{{asset("css/admin/index.css")}}" rel="stylesheet" type="text/css">
 <script href="{{asset("js/jquery-3.2.1.min.js")}}"></script>
+<style>
+
+</style>
 <body>
 @show
 //后台首页顶部
@@ -35,8 +38,8 @@
 @show
 //这是后台首页左侧导航栏
 @section("backstage_left")
-<div class="backstage_left" align="center">
-    <div class="left_main">121315</div>
+<div class="backstage_left">
+    <div class="left_main"></div>
     <a class="left_botton" href=""></a>
 </div>
 @show

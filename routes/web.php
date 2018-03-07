@@ -1,6 +1,5 @@
 <?php
 
-<<<<<<< HEAD
 /**
  * 登录url
  */
@@ -28,7 +27,6 @@ Route::group(["namespace"=>"Setup"],function(){
 
 
 
-
 Route::get('/',function (){
     return view("welcome");
 });
@@ -42,31 +40,6 @@ Route::get('/test','TestController@test');
 
 
 
-=======
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-/**
- * 登录url
- */
-Route::get('/login','LoginController@login');
-
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('foo', function () {
-        return 'Welcome Laravel ';
-    });
->>>>>>> 5fb10aaf223e53b20ee5b6870c0e5383494ac03f
 
 
 Route::group(["prefix"=>"student"],function(){
@@ -79,14 +52,9 @@ Route::group(["prefix"=>"student"],function(){
     Route::get('three','StudentController@three');
     Route::get('four','StudentController@four');
     Route::get('five','StudentController@five');
-<<<<<<< HEAD
     Route::get('six','StudentController@six');
 });
 //测试数据库操作
-=======
-});
-
->>>>>>> 5fb10aaf223e53b20ee5b6870c0e5383494ac03f
 Route::group(["prefix"=>"user"],function(){
     /**
      *  测试数据库操作 DB 直接执行 sql 语句
@@ -133,11 +101,7 @@ Route::resource('photos', 'PhotoController');
 //    Route::get('npt','NptController@test');
 //
 //});
-<<<<<<< HEAD
 
-=======
-//
->>>>>>> 5fb10aaf223e53b20ee5b6870c0e5383494ac03f
 //Route::get('npt','Npt\NptController@test');
 //
 ///*
