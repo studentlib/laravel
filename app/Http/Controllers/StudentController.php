@@ -68,6 +68,7 @@ class StudentController extends Controller
         //return redirect('http://www.baidu.com');
     }
 
+<<<<<<< HEAD
     /**
      * 测试
      */
@@ -76,6 +77,8 @@ class StudentController extends Controller
         dd($Request->all());
     }
 
+=======
+>>>>>>> 5fb10aaf223e53b20ee5b6870c0e5383494ac03f
 
 
 }

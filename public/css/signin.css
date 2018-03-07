@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
     font-size: 20px;
     font-family: 新宋体;
@@ -26,4 +27,13 @@ body{
 }
 .login_ipt{
     margin-right: 15px;
+=======
+.content{
+    width: 500px;
+    height: 400px;
+    position: fixed;
+    margin-top:50%;
+    margin-left: auto;
+    text-align:center;/*文字居中*/
+>>>>>>> 5fb10aaf223e53b20ee5b6870c0e5383494ac03f
 }
