@@ -1,0 +1,199 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td, div {
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word
+}
+
+body, html, input {
+    font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img {
+    border: none
+}
+
+pre {
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+
+input.dialog {
+    height: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    border: none
+}
+
+h1 {
+    font-size: 34px;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+input, label, img, th {
+    vertical-align: middle;
+}
+
+code, kbd, pre, samp {
+    font-family: courier new, courier, monospace;
+}
+
+input.button, input.btn {
+    padding: 0.25em;
+    width: auto;
+    _width: 0;
+    overflow: visible !ie;
+}
+
+ul, ol, li {
+    list-style: none;
+    float: left;
+}
+
+body {
+    font-size: 13px;
+    /*font-family: 微软雅黑;*/
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #0d3625;
+}
+
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+.backstage_top {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width:100%;
+    height: 80px;
+    background-color: #3a6ea4;
+}
+
+.logo_lf {
+    float: left;
+    width: 138px;
+    height: 80px;
+}
+
+.top_narration {
+    float: left;
+    width: 800px;
+    height: 23px;
+    font-size: 15px;
+    margin: 16px 0 0 16px;
+}
+
+.top_menu {
+    float: left;
+    width: 80%;
+    height: 76px;
+}
+
+.top_menu ul {
+    margin-top: 8px;
+    padding-left: 0px;
+}
+
+.top_menu ul li {
+    margin-left: 4px;
+    padding: 4px 4px 4px 4px;
+    /*边框四角形状*/
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    /*边框颜色渐变*/
+    background: -webkit-radial-gradient(#37aaf9, #0553ad); /* Safari 5.1 - 6.0 */
+    background: -o-radial-gradient(#37aaf9, #0553ad); /* Opera 11.6 - 12.0 */
+    background: -moz-radial-gradient(#37aaf9, #0553ad); /* Firefox 3.6 - 15 */
+    background: radial-gradient(#37aaf9, #0553ad); /* 标准的语法（必须放在最后） */
+    font-family: 新宋体;
+    font-size: 16px;
+    background-color: #3e85a4;
+}
+.top_menu ul a li{
+    color: white;
+}
+.backstage_left {
+    position: absolute;
+    float: left;
+    top: 80px;
+    left: 0px;
+    width: 145px;
+    max-height: 568px;
+    min-height: 868px;
+    background-color: #F6FAFB;
+    overflow: hidden;
+}
+.left_main{
+    float: left;
+    margin-left: 2px;
+    border: 1px solid red;
+    width: 90%;
+
+}
+.left_botton{
+    float: right;
+    background-color: #D5E0E3;
+    width: 8px;
+    height: 100%;
+    outline-style: none;
+    outline-width: medium;
+    background: -webkit-linear-gradient(left, #106491 ,#29c5ff); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #106491, #29c5ff); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #106491, #29c5ff); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #106491, #29c5ff); /* 标准的语法（必须放在最后） */
+}
+.backstage_content {
+    position: absolute;
+    float: left;
+    top: 80px;
+    left: 145px;
+    max-width: 1258px;
+    min-width: 1774px;
+    max-height: 568px;
+    min-height: 868px;
+    background-color: antiquewhite;
+    overflow: hidden;
+}

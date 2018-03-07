@@ -1,0 +1,29 @@
+body{
+    font-size: 20px;
+    font-family: 新宋体;
+}
+.content{
+    top: 50%;
+    left: 50%;
+    width: 602px;
+    height: 408px;
+    position: absolute;
+    margin-left: -301px;
+    margin-top: -208px;
+    text-align:center;/*文字居中*/
+    border: #3cff95 1px solid;
+}
+.login_iptbox {
+    bottom: 80px;
+    left: 50%;
+    color: #FFFFFF;
+    font-size: 15px;
+    width: 580px;
+    height: 30px;
+    margin-left: -280px;
+    position: absolute;
+    overflow: visible;
+}
+.login_ipt{
+    margin-right: 15px;
+}
