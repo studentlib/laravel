@@ -25,7 +25,6 @@ Route::group(["namespace"=>"Setup"],function(){
 
 
 
-ceshi
 
 Route::get('/',function (){
     return view("welcome");
