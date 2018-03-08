@@ -9,19 +9,19 @@ namespace App\Http\Controllers\Setup;
 
 use App\Http\Controllers\Controller;
 use App\Models\LeftmenuModel;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 
 class IndexController extends Controller{
 
-    public function index($topmenu_li,$topmenu_name="内容"){
+    public function index(){
         $user = Session::all();
-        $left_menu = LeftmenuModel::where(["roleid"=> $user['roleid'],"top_menu"=>$topmenu_li])
+        $left_menu = LeftmenuModel::where("roleid", $user['roleid'])
             ->select("menu_li", "redirect_url", "menu_name")
             ->orderBy("id", "ASC")
             ->get()->toArray();
         Session::put("left_menu",$left_menu);
-        return view("setup.index",["topmenu_name"=>$topmenu_name]);
+//        dd(Session::get("left_menu"));
+        return view("setup.index");
     }
 
     /*
