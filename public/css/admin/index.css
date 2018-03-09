@@ -7,7 +7,7 @@ body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fo
 body, html, input {
     font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;
 }
-
+img { max-width: 100%;}
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -84,7 +84,8 @@ ul, ol, li {
 body {
     font-size: 13px;
     /*font-family: 微软雅黑;*/
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 a {
@@ -173,24 +174,26 @@ ul, menu, dir {
     width: 132px;
     float: left;
     margin-left: 2px;
-    border: 1px solid red;
     text-align: center;
     font-size: 15px;
     overflow-x: hidden;
 }
 .left_main ul{
     margin: auto;
-    text-align-all: center;
+    text-align: left;
 }
 .left_main ul li{
     width: 125px;
-    height: 35px;
-    text-align: center;
+    height: 24px;
+    line-height:24px;
+    margin: auto;
+    margin-left: 5px;
+    padding-left: 3px;
 }
-.left_main ul li b a{
-    font-size: 15px;
+.left_main ul li a{
+    font-size: 12.5px;
 }
-.left_botton{
+.openclose{
     float: right;
     background-color: #D5E0E3;
     width: 8px;
@@ -208,12 +211,12 @@ ul, menu, dir {
     float: left;
     top: 80px;
     left: 145px;
-    max-width: 1258px;
+    width:auto !important;
+    max-width: 1120px;
     min-width: 1774px;
-    max-height: 568px;
+    height: 568px;
     min-height: 868px;
     background-color: antiquewhite;
-    overflow-x: hidden;
 }
 
 

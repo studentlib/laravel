@@ -18,10 +18,9 @@ Route::get('/logout','LoginController@logout');
 Route::group(["namespace"=>"Setup"],function(){
     //会员中心
     Route::group(["prefix"=>"setup"],function (){
-        Route::get('/',"IndexController@index");
+        Route::get('/{topmenu_li}/{topmenu_name}',"IndexController@index");
     });
 });
-
 
 
 
