@@ -48,7 +48,9 @@ class UserModel extends Model
     //注册管理员
     public static function userinsert($data)
     {
-        if(!is_array($data)&&is_object($data)) $data=$data->toArray();
+        if(!is_array($data)&&is_object($data)){
+            $data=$data->toArray();
+        }
         $user = UserModel::where("username",$data['username'])->first();
         if($user==null){
             if(empty($data['username'])||strlen($data['username'])<4)
@@ -78,6 +80,14 @@ class UserModel extends Model
         }else{
             return "用户已存在";
         }
+    }
+    //修改管理员信息
+    public static function userupdate($data)
+    {
+        $user=UserModel::where(["userid"=>$data["userid"]])->first();
+        unset($data["_token"]);
+        $ret=$user->update($data);
+        return json_encode($ret,true);
     }
 
 }

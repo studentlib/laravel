@@ -10,9 +10,11 @@ body, html, input {
 img { max-width: 100%;}
 table {
     border-collapse: collapse;
-    border-spacing: 0;
+    table-layout:fixed;
 }
-
+td {
+    text-align:left;
+}
 img {
     border: none
 }
@@ -27,14 +29,6 @@ pre {
 
 h1, h2, h3, h4, h5, h6 {
     font-size: 100%;
-}
-
-input.dialog {
-    height: 0;
-    height: 0;
-    font-size: 0;
-    line-height: 0;
-    border: none
 }
 
 h1 {
@@ -78,7 +72,7 @@ input.button, input.btn {
 
 ul, ol, li {
     list-style: none;
-    float: left;
+    /*float: left;*/
 }
 
 body {
@@ -132,7 +126,7 @@ ul, menu, dir {
 .top_menu {
     float: left;
     width: 80%;
-    height: 76px;
+    height: 36px;
 }
 
 .top_menu ul {
@@ -141,6 +135,7 @@ ul, menu, dir {
 }
 
 .top_menu ul li {
+    float: left;
     margin-left: 4px;
     padding: 4px 4px 4px 4px;
     /*边框四角形状*/
@@ -166,9 +161,10 @@ ul, menu, dir {
     left: 0px;
     width: 145px;
     max-height: 568px;
-    min-height: 868px;
+    min-height: 974px;
     background-color: #F6FAFB;
-    overflow: auto;
+    overflow-x: hidden;
+    xoverflow-y: hidden;
 }
 .left_main{
     width: 132px;
@@ -176,7 +172,7 @@ ul, menu, dir {
     margin-left: 2px;
     text-align: center;
     font-size: 15px;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .left_main ul{
     margin: auto;
@@ -192,13 +188,14 @@ ul, menu, dir {
 }
 .left_main ul li a{
     font-size: 12.5px;
+    min-height: 974px;
 }
 .openclose{
     float: right;
     background-color: #D5E0E3;
     width: 8px;
     max-height: 568px;
-    min-height: 868px;
+    min-height: 974px;
     outline-style: none;
     outline-width: medium;
     background: -webkit-linear-gradient(left ,#29c5ff, #106491); /* Safari 5.1 - 6.0 */
@@ -213,10 +210,10 @@ ul, menu, dir {
     left: 145px;
     width:auto !important;
     max-width: 1120px;
-    min-width: 1774px;
+    min-width: 1987px;
     height: 568px;
-    min-height: 868px;
+    min-height: 974px;
     background-color: antiquewhite;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
-
-

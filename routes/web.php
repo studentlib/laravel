@@ -18,7 +18,18 @@ Route::get('/logout','LoginController@logout');
 Route::group(["namespace"=>"Setup"],function(){
     //会员中心
     Route::group(["prefix"=>"setup"],function (){
+        //加载左侧菜单栏
         Route::get('/{topmenu_li}/{topmenu_name}',"IndexController@index");
+        //管理员管理（查）
+        Route::get('/users_manage',"IndexController@users_manage");
+        //添加管理员
+        Route::get('/add_user_index',"IndexController@add_user_index");
+        Route::post('/add_user',"IndexController@add_user");
+        //修改管理员信息
+        Route::post('/upd_user',"IndexController@upd_user");
+        //删除管理员信息
+        Route::get('/del/{username}',"IndexController@del_user");
+
     });
 });
 
