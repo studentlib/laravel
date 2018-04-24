@@ -4,6 +4,8 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Foundation\Testing\HttpException;
+use Illuminate\Session\TokenMismatchException;
 
 class Handler extends ExceptionHandler
 {
@@ -46,8 +48,31 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $exception
      * @return \Illuminate\Http\Response
      */
-    public function render($request, Exception $exception)
+    public function render($request, Exception $e)
     {
-        return parent::render($request, $exception);
+        //TODO 这里一条自定义http错误自动跳转到首页
+        if (getenv('APP_ENV') == 'production' && $e instanceof HttpException) {
+            Log::error($e);
+            return Redirect::to('/login');
+        }
+        if (getenv('APP_ENV') == 'production' && $e instanceof TokenMismatchException) {
+            Log::error($e);
+            if ($request->ajax()) {
+
+                return Response::json(
+                    [
+                        'status' => 'failed',
+                        'error' =>
+                            [
+                                'status_code' => 401,
+                                'message' => '操作未完成，系统加载失败，重新登录或者刷新当前页面！'
+                            ]
+                    ]
+                );
+            }
+            return Redirect::to('/login');
+
+        }
+        return parent::render($request, $e);
     }
 }

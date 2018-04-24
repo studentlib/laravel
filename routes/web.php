@@ -16,10 +16,10 @@ Route::get('/logout','LoginController@logout');
 
 //设置
 Route::group(["namespace"=>"Setup"],function(){
+    //加载左侧菜单栏
+    Route::get('/setup/left/{topmenu_li}',"IndexController@index");
     //会员中心
     Route::group(["prefix"=>"setup"],function (){
-        //加载左侧菜单栏
-        Route::get('/{topmenu_li}/{topmenu_name}',"IndexController@index");
         //管理员管理（查）
         Route::get('/users_manage',"IndexController@users_manage");
         //添加管理员
@@ -28,11 +28,51 @@ Route::group(["namespace"=>"Setup"],function(){
         //修改管理员信息
         Route::post('/upd_user',"IndexController@upd_user");
         //删除管理员信息
-        Route::get('/del/{username}',"IndexController@del_user");
+        Route::post('/del_user',"IndexController@del_user");
 
     });
 });
 
+//角色信息管理
+Route::group(["namespace"=>"Gm"],function(){
+    // 查询
+    Route::group(["prefix"=>"gm"],function (){
+        //切换区服
+        Route::post('/updateSid',"GmController@updateSid");
+        //进入角色查询页面
+        Route::get('/admin',"GmController@admin");
+        //查看玩家基本信息
+        Route::get('/getInfo/{uid}',"GmController@getInfo");
+        //查看英雄基本信息
+        Route::get('/getHeros/{uid}',"GmController@getHeros");
+        //查看资源包基本信息
+        Route::get('/getMoney/{uid}',"GmController@getMoney");
+        //查看主城基本信息
+        Route::get('/getCitys/{uid}',"GmController@getCitys");
+        //查看技能基本信息
+        Route::get('/getSkills/{uid}',"GmController@getSkills");
+        //查看队伍基本信息
+        Route::get('/getTeams/{uid}',"GmController@getTeams");
+
+    });
+    //增加 和 修改
+    Route::group(["middleware"=>"addOrUpd"],function (){
+        Route::group(["prefix"=>"gm"],function (){
+            //添加武将
+            Route::get('/addHero',"GmController@addHero");
+            //修改武将等级
+            Route::post('/updHero',"GmController@updHero");
+            //为玩家添加资源
+            Route::post('/addMoney',"GmController@addMoney");
+        });
+    });
+    //删除
+    Route::group(["middleware"=>"delete"],function (){
+        Route::group(["prefix"=>"gm"],function (){
+
+        });
+    });
+});
 
 
 

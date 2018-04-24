@@ -1,10 +1,14 @@
-body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td, div {
-    margin: 0;
+h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, legend, button, textarea, th, td {
+    margin: 2px;
     padding: 0;
     word-wrap: break-word
 }
-
+fieldset{
+    padding: 3px;
+}
 body, html, input {
+    margin: 1px;
+    padding: 0;
     font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;
 }
 img { max-width: 100%;}
@@ -78,7 +82,7 @@ ul, ol, li {
 body {
     font-size: 13px;
     /*font-family: 微软雅黑;*/
-    overflow-x: hidden;
+    overflow-x:hidden;
     overflow-y: auto;
 }
 
@@ -101,8 +105,9 @@ ul, menu, dir {
     position: absolute;
     top: 0px;
     left: 0;
-    width:100%;
+    width:1927px;
     height: 80px;
+    overflow: hidden;
     background-color: #3a6ea4;
 }
 
@@ -163,13 +168,12 @@ ul, menu, dir {
     max-height: 568px;
     min-height: 974px;
     background-color: #F6FAFB;
-    overflow-x: hidden;
-    xoverflow-y: hidden;
+    overflow:auto;
 }
 .left_main{
-    width: 132px;
+    width: 122px;
     float: left;
-    margin-left: 2px;
+    margin-left: 5px;
     text-align: center;
     font-size: 15px;
     overflow: hidden;
@@ -183,7 +187,7 @@ ul, menu, dir {
     height: 24px;
     line-height:24px;
     margin: auto;
-    margin-left: 5px;
+    margin-left: 10px;
     padding-left: 3px;
 }
 .left_main ul li a{
@@ -210,10 +214,18 @@ ul, menu, dir {
     left: 145px;
     width:auto !important;
     max-width: 1120px;
-    min-width: 1987px;
+    min-width: 1795px;
     height: 568px;
     min-height: 974px;
     background-color: antiquewhite;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow:auto;
+}
+.content{
+    position: relative;
+    margin: 25px 5px 15px 5px;
+    padding: 12px 5px 5px 9px;
+    width: 1760px;
+    height: 100%;
+    background-color:white;
+    overflow:auto;
 }

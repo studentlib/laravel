@@ -22,7 +22,7 @@ class UserModel extends Model
     protected $primaryKey = "userid";
 
     //$timestamps (默认 true) ，自动插入创建时间（created_at）和修改时间（updated_at）  设置false 关闭自动填充功能
-    public $timestamps=true;
+    //public $timestamps=true;
 
     //用fill() 插入数据时，需要通过$fillable 指定允许操作的字段
     protected $fillable = [];
@@ -84,10 +84,30 @@ class UserModel extends Model
     //修改管理员信息
     public static function userupdate($data)
     {
-        $user=UserModel::where(["userid"=>$data["userid"]])->first();
         unset($data["_token"]);
-        $ret=$user->update($data);
-        return json_encode($ret,true);
+        $ret["code"]=UserModel::where(["userid"=>$data["userid"]])->update($data);
+        if($ret["code"]){
+            $ret["msg"]="修改成功";
+        }else{
+            $ret["msg"]="修改失败";
+        }
+        return $ret;
+    }
+    //删除管理员信息
+    public static function userdel($userid)
+    {
+        if($userid==1){
+            $ret["code"]=110;
+            $ret["msg"]="系统超级管理员不能删除";
+            return $ret;
+        }
+        $ret["code"]=UserModel::where(["userid"=>$userid])->delete();
+        if($ret["code"]){
+            $ret["msg"]="删除成功";
+        }else{
+            $ret["msg"]="删除失败";
+        }
+        return $ret;
     }
 
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+道具ID 道具类型 道具名称
+ int int  char
+-->
+<Item>
+<row ItemID="1" ItemType="1" ItemName="Name1" />
+<row ItemID="2" ItemType="1" ItemName="Name2" />
+<row ItemID="3" ItemType="1" ItemName="Name3" />
+<row ItemID="4" ItemType="1" ItemName="Name4" />
+<row ItemID="5" ItemType="1" ItemName="Name5" />
+<row ItemID="6" ItemType="1" ItemName="Name6" />
+<row ItemID="7" ItemType="1" ItemName="Name7" />
+<row ItemID="8" ItemType="1" ItemName="Name8" />
+<row ItemID="9" ItemType="1" ItemName="Name9" />
+<row ItemID="10" ItemType="1" ItemName="Name10" />
+
+</Item>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+属性ID Key 
+int string 
+-->
+<CoinBase>
+  <row ID="1" Key="Diamond" />
+  <row ID="2" Key="Gold" />
+  <row ID="3" Key="Exp" />
+  <row ID="4" Key="VipExp" />
+  <row ID="5" Key="Wood" />
+  <row ID="6" Key="Iron" />
+  <row ID="7" Key="Stone" />
+  <row ID="8" Key="Food" />
+  <row ID="9" Key="PreSoldier" />
+  <row ID="10" Key="SkillExp" />
+</CoinBase>

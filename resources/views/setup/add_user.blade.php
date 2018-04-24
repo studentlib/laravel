@@ -1,6 +1,6 @@
 @extends("blades.index")
 @section("script")
-    <script src="{{asset("js/jquery-3.2.1.min.js")}}" type="text/javascript"></script>
+    @parent
     <script type="text/javascript">
         $(document).ready(function () {
             $(".save").click(function(){
@@ -36,16 +36,18 @@
             color: #444;
             font-size: 13px;
             margin: 20px 0 0 80px;
+
         }
         .users_table {
             margin-top: 50px;
             margin-left: 80px;
+
         }
     </style>
 
 @endsection
 @section("backstage_content")
-    <div class="backstage_content" >
+    <div class="content" >
         <ul class="users_manage">
             <li class="users" ><a href="/setup/users_manage">管理员管理</a></li>
             <li>&nbsp;|&nbsp;</li>

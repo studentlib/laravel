@@ -1,28 +1,38 @@
 @extends("blades.index")
 @section("script")
-    <script src="{{asset("js/jquery-3.2.1.min.js")}}" type="text/javascript"></script>
-    [if gte IE 8]
-    <script src="{{asset("js/jquery-1.4.4.min.js")}}" type="text/javascript"></script>
-    [endif]
+    @parent
     <script type="text/javascript">
-        function isnull(cl) {
-            alert("1231");
-            alert(cl.text());
-        }
         $(document).ready(function () {
-            $("table").delegate("upd","click",function(){
+            $("table").delegate("#upd","click",function(){
                 var idc=$(this).attr("class").split("_");
                 var post={};
-                post.userid=$("#usertd_"+idc[1]+"_userid");
-                post.username=$("#usertd_"+idc[1]+"_username");
-                post.password_original=$("#usertd_"+idc[1]+"_password_original");
-                post.roleid=$("#usertd_"+idc[1]+"_roleid");
-                post.email=$("#usertd_"+idc[1]+"_email");
-                post.realname=$("#usertd_"+idc[1]+"_realname");
+                post.userid=$(".usertd_"+idc[1]+"_userid").text();
+                post.username=$(".usertd_"+idc[1]+"_username").text();
+                post.password_original=$(".usertd_"+idc[1]+"_password_original").text();
+                post.roleid=$(".usertd_"+idc[1]+"_roleid").text();
+                post.email=$(".usertd_"+idc[1]+"_email").text();
+                post.realname=$(".usertd_"+idc[1]+"_realname").text();
                 post._token="{{csrf_token()}}";
-                console.log(post);
+                for (var v in post){
+                    if(post[v]==""){
+                        alert("修改参数不能为空");
+                        return;
+                    };
+                }
                 $.post("/setup/upd_user",post,function (data) {
-                    alert(data);
+                    alert(data.msg);
+                    location.reload();
+                },"json");
+            });
+
+            $("table").delegate("#del","click",function(){
+                var idc=$(this).attr("class").split("_");
+                var post={};
+                post.userid=$(".usertd_"+idc[1]+"_userid").text();
+                post._token="{{csrf_token()}}";
+                $.post("/setup/del_user",post,function (data) {
+                    alert(data.msg);
+                    location.reload();
                 },"json");
             });
         });
@@ -43,7 +53,6 @@
             color: #0553ad;
             font-size: 13px;
             margin: 20px 0 0 80px;
-
         }
         .users_table {
             margin-top: 50px;
@@ -58,15 +67,15 @@
 
 @endsection
 @section("backstage_content")
-    <div class="backstage_content" >
+    <div class="content" >
         <ul class="users_manage">
             <li class="users" style="background-color: #37aaf9;word-wrap: break-word;"><a href="/setup/users_manage">管理员管理</a></li>
             <li>&nbsp;|&nbsp;</li>
             <li class="add_user"><a href="/setup/add_user_index">添加管理员</a></li>
         </ul>
         <div class="users_table">
-            <table  contenteditable="true"  style="border-collapse:separate; border-spacing:40px 10px;">
-                <tr contenteditable="false">
+            <table style="border-collapse:separate; border-spacing:40px 10px;">
+                <tr>
                     <td>顺序ID</td>
                     <td>用户名</td>
                     <td>所属角色</td>
@@ -81,7 +90,14 @@
                 @for($i=0 ;$i<count($users);$i++)
                     <tr class="usertr_{{$i}}">
                         @foreach($users[$i] as $k=>$v)
-                            <td class="usertd_{{$i}}_{{$k}}" onchange="isnull(this)">{{$v}}</td>
+                            <?php
+                                if($k=="userid"){
+                                    $contenteditable="contenteditable=false";
+                                }else{
+                                    $contenteditable="contenteditable=true";
+                                }
+                            ?>
+                            <td class="usertd_{{$i}}_{{$k}}" {{$contenteditable}}>{{$v}}</td>
                         @endforeach
                             <td contenteditable="false">
                                 <b style='cursor:pointer;color:blue;letter-spacing: 2px;' id="upd" class="upd_{{$i}}">修改</b>
