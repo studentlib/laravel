@@ -40,7 +40,7 @@ Route::group(["namespace"=>"Gm"],function(){
         //切换区服
         Route::post('/updateSid',"GmController@updateSid");
         //进入角色查询页面
-        Route::get('/admin',"GmController@admin");
+        Route::get('/index',"GmController@admin");
         //查看玩家基本信息
         Route::get('/getInfo/{uid}',"GmController@getInfo");
         //查看英雄基本信息
